@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mission to Mars</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">  
+
+    </head>
+
+    <body>
+        <div class="header">
+            <h1><strong>Mission to Mars</strong></h1>
+            <button type="button" class="btn btn-info" href="/scrape">Scrape New Data</button>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row mars-news">
+                <div class="col-md-12">
+                    <h2>Latest Mars News</h2>
+                    <h4>{{dict.news_title}}</h3>
+                    <p> {{dict.news_p}}</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Featured Mars Image</h2>
+                    <img src={dict.featured_image_url} alt="Featured Mars Image">
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Current Weather on Mars</h5>
+                            <p class="card-text">{{dict.mars_weather}}</p>
+                          </div>
+                    </div>
+                    
+                    <div class="mars-fact">
+                        <h3>Mars Fact</h3>
+                        <div>
+                            {{dict.html_table}}
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="container-fluid">
+                <div class="hemi-head justify-content-center">
+                    <h2>Mars Hemispheres</h2>
+                    <hr>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 hemi-img">
+                        <div class="card">
+                            <img src="{{dict.hemisphere_image_urls[0].img_url}}" class="card-img-top" alt="{{dict.hemisphere_image_urls[0].title}}">
+                            <div class="card-body">
+                            <p class="card-text">{{dict.hemisphere_image_urls[0].title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 hemi-img">
+                        <div class="card">
+                            <img src="{{dict.hemisphere_image_urls[1].img_url}}" class="card-img-top" alt="{{dict.hemisphere_image_urls[1].title}}">
+                            <div class="card-body">
+                            <p class="card-text">{{dict.hemisphere_image_urls[1].title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+                <div class="row">
+                    <div class="col-md-6 hemi-img">
+                        <div class="card">
+                            <img src={{dict.hemisphere_image_urls[2].img_url}} class="card-img-top" alt="{{dict.hemisphere_image_urls[2].title}}">
+                            <div class="card-body">
+                            <p class="card-text">{{dict.hemisphere_image_urls[2].title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 hemi-img">
+                        <div class="card">
+                            <img src={{dict.hemisphere_image_urls[3].img_url}} class="card-img-top" alt="{{dict.hemisphere_image_urls[3].title}}">
+                            <div class="card-body">
+                            <p class="card-text">{{dict.hemisphere_image_urls[3].title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                
+            </div>
+
+        </div>
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+</html>
