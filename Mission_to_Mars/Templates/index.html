@@ -4,43 +4,41 @@
         <meta charset="UTF-8">
         <title>Mission to Mars</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">  
-
     </head>
 
     <body>
-        <div class="header">
+        <div class="jumbotron text-center height" style="padding:30px">
             <h1><strong>Mission to Mars</strong></h1>
-            <button type="button" class="btn btn-info" href="/scrape">Scrape New Data</button>
+            <p><a class="btn btn-info btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
 
         <div class="container-fluid">
-            <div class="row mars-news">
+            <div class="row mt-2">
                 <div class="col-md-12">
-                    <h2>Latest Mars News</h2>
-                    <h4>{{dict.news_title}}</h3>
+                    <h4>Latest Mars News</h4>
+                    <h6>{{dict.news_title}}</h6>
                     <p> {{dict.news_p}}</p>
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row mt-2">
                 <div class="col-md-8">
-                    <h2>Featured Mars Image</h2>
-                    <img src={dict.featured_image_url} alt="Featured Mars Image">
+                    <h4>Featured Mars Image</h4>
+                    <img src="{{dict.featured_image_url}}" class="w-100" alt="Featured Mars Image">
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mt-2">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Current Weather on Mars</h5>
+                            <h6 class="card-title">Current Weather on Mars</h6>
                             <p class="card-text">{{dict.mars_weather}}</p>
                           </div>
                     </div>
                     
-                    <div class="mars-fact">
-                        <h3>Mars Fact</h3>
-                        <div>
-                            {{dict.html_table}}
+                    <div class="mt-2">
+                        <h6>Mars Fact</h6>
+                        <div class = "table-responsive-md  bg-light">
+                            {{dict.html_table|safe}}
                         </div>
 
                     </div>
@@ -50,43 +48,45 @@
             </div>
 
             <div class="container-fluid">
-                <div class="hemi-head justify-content-center">
-                    <h2>Mars Hemispheres</h2>
-                    <hr>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-12">
+                        <h4 class="text text-center">Mars Hemispheres</h4>
+                        <hr>
+                    </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-md-6 hemi-img">
+                    <div class="col-md-5 p-2">
                         <div class="card">
-                            <img src="{{dict.hemisphere_image_urls[0].img_url}}" class="card-img-top" alt="{{dict.hemisphere_image_urls[0].title}}">
+                            <img src="{{dict.hemi_img_urls[0].img_url}}" class="card-img-top" alt="{{dict.hemi_img_urls[0].title}}">
                             <div class="card-body">
-                            <p class="card-text">{{dict.hemisphere_image_urls[0].title}}</p>
+                            <p class="card-text">{{dict.hemi_img_urls[0].title}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 hemi-img">
+                    <div class="col-md-5 p-2">
                         <div class="card">
-                            <img src="{{dict.hemisphere_image_urls[1].img_url}}" class="card-img-top" alt="{{dict.hemisphere_image_urls[1].title}}">
+                            <img src="{{dict.hemi_img_urls[1].img_url}}" class="card-img-top" alt="{{dict.hemi_img_urls[1].title}}">
                             <div class="card-body">
-                            <p class="card-text">{{dict.hemisphere_image_urls[1].title}}</p>
+                            <p class="card-text">{{dict.hemi_img_urls[1].title}}</p>
                             </div>
                         </div>
                     </div>
                 </div>   
 
-                <div class="row">
-                    <div class="col-md-6 hemi-img">
+                <div class="row justify-content-center">
+                    <div class="col-md-5 mt-2 p-2">
                         <div class="card">
-                            <img src={{dict.hemisphere_image_urls[2].img_url}} class="card-img-top" alt="{{dict.hemisphere_image_urls[2].title}}">
+                            <img src={{dict.hemi_img_urls[2].img_url}} class="card-img-top" alt="{{dict.hemi_img_urls[2].title}}">
                             <div class="card-body">
-                            <p class="card-text">{{dict.hemisphere_image_urls[2].title}}</p>
+                            <p class="card-text">{{dict.hemi_img_urls[2].title}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 hemi-img">
+                    <div class="col-md-5 mt-2 p-2">
                         <div class="card">
-                            <img src={{dict.hemisphere_image_urls[3].img_url}} class="card-img-top" alt="{{dict.hemisphere_image_urls[3].title}}">
+                            <img src={{dict.hemi_img_urls[3].img_url}} class="card-img-top" alt="{{dict.hemi_img_urls[3].title}}">
                             <div class="card-body">
-                            <p class="card-text">{{dict.hemisphere_image_urls[3].title}}</p>
+                            <p class="card-text">{{dict.hemi_img_urls[3].title}}</p>
                             </div>
                         </div>
                     </div>
@@ -95,18 +95,5 @@
             </div>
 
         </div>
-
-
-
-
-
     </body>
-
-
-
-
-
-
-
-
 </html>
